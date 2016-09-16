@@ -26,7 +26,7 @@ If not already the case, such beginning must be refactored to use `enough` so as
 ### Unfolding definitions in the lemma statement
 
 Using `enough` could also be useful for clarification when the lemma statement contains a definition that is (possibly silently) unfolded.
-But `now_show` is more than enough in such cases.
+But `now_show` is simpler and probably better in such cases.
 
 #### Example
 
@@ -71,3 +71,17 @@ In case several sub-goals are solved in a very similar way, it might read better
 provided that it still allows to see what is going on.
 Using `all:` instead of `;` can help distinguish a few logical steps.
 Using `replace` and such can help make these steps sufficiently explicit.
+
+## Putting the proof back in order (deductive style)
+
+### Prefer `absurd` to `exfalso`
+
+Use of `exfalso` is generally followed by the application of a lemma ending with a negation.
+This is hard to follow.
+Instead, we can make explicit what is the contradiction we're going to get with `absurd`.
+Ideally the reason why it is absurd is not hard to get (with automation).
+
+### Negations can be proved by contradiction
+
+It suffices to start the proof with `intro`.
+To make it more explicit, it would be enough to be able to repeat what is the hypothesis introduced.
