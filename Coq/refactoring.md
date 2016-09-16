@@ -11,7 +11,9 @@ The most obvious way to decide would be to depend on the tactic used to create s
 
 - `enough`, `assert`, `absurd` generate one intermediate goal, and one main goal (with the first two the main goal is unchanged);
 
-- `rewrite` may generate several intermediate goals, and one main goal which is last (TODO: check that).
+- `rewrite`, `apply in` and `rewrite in` may generate several intermediate goals corresponding to the additional conditions to satisfy but unfortunately these conditions are put *after* the main goal (thus preventing proving them between brackets).
+One solution is to add some `assert` to tackle the conditions before-hand.
+Then this new hypothesis can be used explicitely, or through `; trivial` or `; [| assumption]`.
 
 ## Initial changes to the goal to prove
 
