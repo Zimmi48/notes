@@ -22,3 +22,10 @@ Then the proof may start by a series of changes to the goal to prove with `intro
 If not already the case, such beginning must be refactored to use `enough` so as to make obvious what will be the real goal to prove.
 
 Using `enough` might also be useful for clarification when the lemma statement contains a definition that is silently unfolded.
+
+## Simple automation
+
+Use of simple automation such as `auto with arith` might be helpful to clarify which steps are easy and which are more important.
+It also makes the proof shorter without removing any of the real content.
+
+Some different considerations may apply when the proof is designed to be shown to students.
