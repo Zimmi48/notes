@@ -13,3 +13,12 @@ The most obvious way to decide would be to depend on the tactic used to create s
 
 - `rewrite` may generate several intermediate goals, and one main goal which is last (TODO: check that).
 
+## Initial changes to the goal to prove
+
+Many times, a lemma statement is written in a form that is easy to use but harder to prove,
+or the lemma needs to be generalized before being proved by induction.
+Then the proof may start by a series of changes to the goal to prove with `intros` `rewrite` `revert` or other tactics.
+
+If not already the case, such beginning must be refactored to use `enough` so as to make obvious what will be the real goal to prove.
+
+Using `enough` might also be useful for clarification when the lemma statement contains a definition that is silently unfolded.
