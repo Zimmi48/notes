@@ -21,7 +21,16 @@ Then the proof may start by a series of changes to the goal to prove with `intro
 
 If not already the case, such beginning must be refactored to use `enough` so as to make obvious what will be the real goal to prove.
 
-Using `enough` might also be useful for clarification when the lemma statement contains a definition that is silently unfolded.
+### Unfolding definitions in the lemma statement
+
+Using `enough` could also be useful for clarification when the lemma statement contains a definition that is (possibly silently) unfolded.
+But `now_show` is more than enough in such cases.
+
+#### Example
+
+    Theorem Nat_divides_l : ∀ a b, (∃ c, a = (b * c)%nat) ↔ (b | a)%nat.
+    Proof.
+      now_show (∀ a b, (∃ c, a = (b * c)%nat) ↔ (∃ c, a = (c * b)%nat)).
 
 ## Simple automation
 
@@ -54,4 +63,9 @@ Here, the lemma allowing the rewrite step is mentionned after `by auto using`.
 
 The same technique with `replace` could be used for important reduction or unfolding steps (TODO: check this).
 
+## Similar sub-goals
 
+In case several sub-goals are solved in a very similar way, it might read better to factorize the proofs,
+provided that it still allows to see what is going on.
+Using `all:` instead of `;` can help distinguish a few logical steps.
+Using `replace` and such can help make these steps sufficiently explicit.
