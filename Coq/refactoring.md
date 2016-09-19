@@ -63,6 +63,12 @@ without having to write anything else.
 Here, the lemma allowing the rewrite step is mentionned after `by auto using`.
 `auto using` instead of `apply` avoids having to explicitely call `symmetry`.
 
+I still have one example where an explicit call to `symmetry` is necessary:
+
+   replace (l' * g / g) with l'; [| symmetry; auto using Nat.div_mul].
+
+So does `auto` try `symmetry` or not?
+
 The same technique with `replace` could be used for important reduction or unfolding steps (TODO: check this).
 
 ## Similar sub-goals
