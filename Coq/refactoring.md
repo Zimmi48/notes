@@ -69,7 +69,9 @@ I still have one example where an explicit call to `symmetry` is necessary:
 
 So does `auto` try `symmetry` or not?
 
-The same technique with `replace` could be used for important reduction or unfolding steps (TODO: check this).
+The same technique with `replace` can be used for important reduction or unfolding steps:
+
+    replace (Nat.lcm (k' * g) (l' * g)) with (k' * g * (l' * g / Nat.gcd (k' * g) (l' * g))); [| reflexivity ].
 
 ### When `replace` needs quite some justification
 
