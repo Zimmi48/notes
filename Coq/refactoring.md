@@ -100,3 +100,8 @@ Ideally the reason why it is absurd is not hard to get (with automation).
 
 It suffices to start the proof with `intro`.
 To make it more explicit, it would be enough to be able to repeat what is the hypothesis introduced.
+
+### Group by reasoning block
+
+A series of manipulation of an hypothesis can be singled out in an intermediate step.
+Then the sub-proof can be refactored independently.
