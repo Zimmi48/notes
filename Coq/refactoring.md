@@ -72,6 +72,21 @@ provided that it still allows to see what is going on.
 Using `all:` instead of `;` can help distinguish a few logical steps.
 Using `replace` and such can help make these steps sufficiently explicit.
 
+### Similar intermediate steps
+
+When it can be identified that intermediate steps (introduced with `assert`) share a similar proof,
+they can be grouped together with a conjunction only to be introduced again as distinct assumptions.
+Then the proof can be factorized.
+
+#### Example
+
+    assert (g ≠ 0 ∧ l' ≠ 0) % nat as []. {
+      split; intro.
+      all: absurd ((l' * g) = 0) % nat; [ assumption |].
+      - now subst g.
+      - now subst l'.
+    }
+
 ## Putting the proof back in order (deductive style)
 
 ### Prefer `absurd` to `exfalso`
