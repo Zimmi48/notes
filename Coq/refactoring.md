@@ -65,11 +65,16 @@ Here, the lemma allowing the rewrite step is mentionned after `by auto using`.
 
 I still have one example where an explicit call to `symmetry` is necessary:
 
-   replace (l' * g / g) with l'; [| symmetry; auto using Nat.div_mul].
+    replace (l' * g / g) with l'; [| symmetry; auto using Nat.div_mul].
 
 So does `auto` try `symmetry` or not?
 
 The same technique with `replace` could be used for important reduction or unfolding steps (TODO: check this).
+
+### When `replace` needs quite some justification
+
+Then this is not the right tactic because the justification is postponed.
+Instead we can introduce the rewriting lemma with an `assert` and use it immediately with `as ->`.
 
 ## Similar sub-goals
 
