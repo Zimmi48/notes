@@ -65,7 +65,7 @@ Here, the lemma allowing the rewrite step is mentionned after `by auto using`.
 
 I still have one example where an explicit call to `symmetry` is necessary:
 
-    replace (l' * g / g) with l'; [| symmetry; auto using Nat.div_mul].
+    replace (l' * g / g) with l' by (symmetry; auto using Nat.div_mul).
 
 So does `auto` try `symmetry` or not?
 
