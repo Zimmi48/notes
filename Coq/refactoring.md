@@ -78,6 +78,11 @@ The same technique with `replace` can be used for important reduction or unfoldi
 Then this is not the right tactic because the justification is postponed.
 Instead we can introduce the rewriting lemma with an `assert` and use it immediately with `as ->`.
 
+Note that this is an example of inconsistency in the semantics of the `by` keyword.
+
+Another limitation of `replace` is that it does not fail when there is nothing to replace.
+It can be corrected with the use of the tactical `progress`.
+
 ## Similar sub-goals
 
 In case several sub-goals are solved in a very similar way, it might read better to factorize the proofs,
