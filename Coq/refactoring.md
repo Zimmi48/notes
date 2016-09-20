@@ -71,7 +71,7 @@ So does `auto` try `symmetry` or not?
 
 The same technique with `replace` can be used for important reduction or unfolding steps:
 
-    replace (Nat.lcm (k' * g) (l' * g)) with (k' * g * (l' * g / Nat.gcd (k' * g) (l' * g))); [| reflexivity ].
+    replace (Nat.lcm (k' * g) (l' * g)) with (k' * g * (l' * g / Nat.gcd (k' * g) (l' * g))) by reflexivity.
 
 ### When `replace` needs quite some justification
 
@@ -123,3 +123,18 @@ To make it more explicit, it would be enough to be able to repeat what is the hy
 
 A series of manipulation of an hypothesis can be singled out in an intermediate step.
 Then the sub-proof can be refactored independently.
+
+### Expliciting the reasonning behind `apply`
+
+When it makes sense to use keep a justificative style (proof by `apply`) for some steps,
+we can make these steps more explicit with the use of `enough`
+
+#### Example
+
+Replace:
+
+    apply Nat.gauss with (m := l'); trivial.
+
+with:
+
+    enough (k' | l' * l₁) by (eapply Nat.gauss; eauto).
