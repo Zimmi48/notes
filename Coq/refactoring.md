@@ -152,3 +152,12 @@ Replace:
 with:
 
     enough (k' | l' * l₁) by (eapply Nat.gauss; eauto).
+
+### Deductive style
+
+It is a series of `assert` replacing a series of `apply`. The order is reversed.
+The `assert` explicit what is the intermediate step to prove and the use of `by now apply` allows to replace one line with just one line.
+
+It gets more complicated to replace `eapply` or if we don't want to provide explicit arguments to our theorem:
+`eauto using` does not seem to work; `eapply; eassumption` can fail depending on the order of generated subgoals.
+
