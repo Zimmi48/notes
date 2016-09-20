@@ -41,6 +41,10 @@ It also makes the proof shorter without removing any of the real content.
 
 Some different considerations may apply when the proof is designed to be shown to students.
 
+Use of `autorewrite` can be also quite useful for easy steps.
+However the tactic is very inefficient as soon as the database gets big.
+Maybe the database to use in a proof should be defined on the spot.
+
 ## Sequence of `rewrite`
 
 It is clear that chaining calls to `rewrite` is not the clearest way to show what's going on to the reader.
