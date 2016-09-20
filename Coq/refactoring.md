@@ -45,6 +45,16 @@ Use of `autorewrite` can be also quite useful for easy steps.
 However the tactic is very inefficient as soon as the database gets big.
 Maybe the database to use in a proof should be defined on the spot.
 
+## Expliciting an existential statement to be destructurated
+
+Instead of using `destruct`, we can use `assert` to remind the hypothesis with an `as` clause to destruct it immediately.
+
+    assert (∃ k₁, m = k₁ * (k' * g)) as (k₁, ?) by assumption.
+
+This will be translated in English into:
+
+> Take k₁ such that m = k₁ · (k' · g).
+
 ## Sequence of `rewrite`
 
 It is clear that chaining calls to `rewrite` is not the clearest way to show what's going on to the reader.
