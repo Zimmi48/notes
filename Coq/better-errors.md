@@ -4,6 +4,8 @@ Les messages d'erreur de Coq pourraient être plus souvent associés à des indi
 
 Penser à noter lesquels en attendant de réaliser ces améliorations.
 
+Des conseils pour de meilleures erreurs : http://www.cli-nerd.com/2016/09/25/applying-user-centered-design-to-errors.html
+
 # Liste
 
 - Par exemple pour "Unbound and bit generalizable variable" on pourrait ajouter "You can solve this by using "Set Generalize All Variables". 
