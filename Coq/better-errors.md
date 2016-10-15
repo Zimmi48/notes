@@ -34,3 +34,7 @@ Error: Cannot coerce le to an evaluable reference. *)
 ````
 
 Pourquoi ne pas plutôt écrire `Error: le is an inductive type, it cannot be coerced to an evaluable reference.`
+
+Même message d'erreur lorsque la référence à évaluer est opaque.
+Cf : 
+stackoverflow.com/questions/40050969/error-cannot-coerce-to-an-evaluable-reference-in-coq
