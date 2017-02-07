@@ -161,3 +161,6 @@ The `assert` explicit what is the intermediate step to prove and the use of `by 
 It gets more complicated to replace `eapply` or if we don't want to provide explicit arguments to our theorem:
 `eauto using` does not seem to work; `eapply; eassumption` can fail depending on the order of generated subgoals.
 
+## Introductions
+
+`intros` is kind of an administrative step. The mechanism of sections can be used to avoid it.
