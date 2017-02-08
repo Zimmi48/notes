@@ -63,6 +63,8 @@ Using a sequence of `assert` or `enough` would be too heavy and not robust to mi
 Instead, a sequence of `rewrite` can be refactored to use `replace`, thus making the part that is transformed very explicit,
 without having to write anything else.
 
+Attention! `replace` does not fail when doing nothing. It should be rebinded to `progress replace`.
+
 #### Example
 
     Theorem Nat_sub_sub_comm : ∀ m n p, (m - n - p)%nat = (m - p - n)%nat.
